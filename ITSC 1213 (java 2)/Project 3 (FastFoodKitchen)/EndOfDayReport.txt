@@ -1,0 +1,6 @@
+Our completed orders for the day: 
+BurgerOrder{numHamburgers=3, numCheeseburgers=15, numVeggieburgers=4, numSodas=10, orderToGo=false, orderNum=1}
+BurgerOrder{numHamburgers=1, numCheeseburgers=1, numVeggieburgers=1, numSodas=1, orderToGo=true, orderNum=1}
+Our uncompleted orders for the day: 
+BurgerOrder{numHamburgers=10, numCheeseburgers=10, numVeggieburgers=3, numSodas=4, orderToGo=true, orderNum=2}
+BurgerOrder{numHamburgers=1, numCheeseburgers=1, numVeggieburgers=1, numSodas=2, orderToGo=false, orderNum=3}

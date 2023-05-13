@@ -1,0 +1,10 @@
+Top candidates: 
+3.5, Xavier Cato, CS
+4.0, Kathrine Johnson, CS
+
+Middle candidates: 
+3.2, Roy Clay, Biology
+3.4, Grace Maxeem, Psychology
+
+Low candidates: 
+3.0, Kimberly Bryant, Electrical Engineering
