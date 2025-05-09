@@ -1,0 +1,46 @@
+; Dean Trojanowski
+
+;need a driver program that can call your subroutine
+0010 1111 0000 0000    ; Begin at 0x2f00 
+
+0011 000 000011000     ; Save R0 to "Saved R0"
+0011 001 000011000     ; Save R1 to "Saved R1"
+0011 010 000011000     ; Save R2 to "Saved R2"
+0011 011 000011000     ; Save R3 to "Saved R3"
+0011 100 000011000     ; Save R4 to "Saved R4"
+0011 101 000011000     ; Save R5 to "Saved R5"
+0011 110 000011000     ; Save R6 to "Saved R6"
+0011 111 000011000     ; Save R7 to "Saved R7" 
+
+0101 000 000 1 00000   ; AND to set R0 to 0
+1010 001 000001111     ; Load R1 with "Saved R1" pointer  
+1010 010 000010001     ; Load R2 with "Saved R2" pointer
+
+; Loop begins here
+0000 110 000000011     ; BRANCH if R1 <= 0
+0001 010 010 0 00 000  ; ADD R2 to R0 in R0
+0001 001 001 1 11111   ; SUBTRACT 1 from R1
+0000 111 111111100     ; BRANCH to beginning of loop
+
+1011 000 000001011     ; SAVES R0 to address in "Saved R2" 
+
+0010 000 000001000     ; Load R0 from "Saved R0"
+0010 001 000001000     ; Load R1 from "Saved R1"
+0010 010 000001000     ; Load R2 from "Saved R2"
+0010 011 000001000     ; Load R3 from "Saved R3"
+0010 100 000001000     ; Load R4 from "Saved R4"
+0010 101 000001000     ; Load R5 from "Saved R5"
+0010 110 000001000     ; Load R6 from "Saved R6"
+0010 111 000001000     ; Load R7 from "Saved R7" 
+
+1100 000 111 000000    ; RETURN 1
+
+0000 0000 0000 0000    ;Saved R0 
+0000 0000 0000 0000    ;Saved R1 
+0000 0000 0000 0000    ;Saved R2 
+0000 0000 0000 0000    ;Saved R3 
+0000 0000 0000 0000    ;Saved R4 
+0000 0000 0000 0000    ;Saved R5 
+0000 0000 0000 0000    ;Saved R6 
+0000 0000 0000 0000    ;Saved R7 
+

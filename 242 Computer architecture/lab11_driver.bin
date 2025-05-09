@@ -1,0 +1,19 @@
+; Dean Trojanowski
+
+;need a driver program that can call your subroutine
+0011 0000 0000 0000     ; load in to the program at line 3000
+
+1110 000 000101011      ; R0 LEA operation (43) these should all be the same
+1110 001 000101010      ; R1 adresses of the operand stored 1 2 into the bottom two variables (42) these should all be the same
+1110 010 000101001      ; R2 adress of where to store the result (41) these should all be the same
+0010 100 000101000      ; R4 LD address of the multiplication subroutine into register (40) these should all be the same
+
+0100 0 00 100 000000    ; JSRR operation to jump to the address of register 4
+
+1111 0000 0010 0101    ; halt program
+
+0000 0000 0000 1001    ;Var 1 
+0000 0000 0000 0100    ;Var 2 
+0000 0000 0000 0000    ;Result 
+0010 1111 0000 0000    ;address for the multiplication subroutine 4 2f00
+

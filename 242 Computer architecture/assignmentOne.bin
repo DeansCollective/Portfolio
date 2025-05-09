@@ -1,0 +1,29 @@
+0011 0000 0000 0000 ; Loads the program at address x3000
+
+0010 1111 0011 0000 ;The subroutine should start at location x2f30,
+
+0010 000 1111 1101  ; Loads the dividend into register 0
+0010 001 1111 1110  ;Loads the divisor into register 1
+
+1001 001 001 111111 ;Negates the divisor in register 1 (R1 = -R1) NOT, Twos comp?
+
+0101 010 000 1 00000   ;Initializes registers 2 and 3 to zeros
+0101 011 000 1 00000   ;Initializes registers 2 and 3 to zeros
+
+;Create a loop that does:
+0000 110 000000100
+0001 100 000 1 11111     ;Subtracts register 1 from register 0 and store in register 4 result is less than or equal to zero 
+0001 011 011 1 00 001    ;Increments register 3 by one
+0001 000 100 0 00 000    ;Assigns the value in register 4 to register 0, use additon?
+0000 111 111111100       ;Goes back to the start of the loop
+
+;When the loop is done, you now have the quotient in register 0 and the remainder in register 3. 
+0011 000 1111 1011;Store these values to the memory at the bottom of the program.
+0011 011 1111 0011
+
+1111 0000 0010 0101;Halt the program.
+
+0000 0000 0000 0000 ; a quotient (initialized to zero)
+0000 0000 0000 0000 ; a remainder (initialized to zero)
+0000 0000 0000 0000 ; dividend
+0000 0000 0000 0000 ; divisor 
